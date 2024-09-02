@@ -44,16 +44,11 @@ jobs:
       - name: Download artifact
         uses: actions/download-artifact@v2
         with:
-          github_token: ${{ secrets.TOKEN }}
-          publish_dir: ./build      
-
-    
-
-
-
-        with:
           name: production-files
           path: ./build
       
-      - name: Deploy to Github Pages
+      - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.TOKEN }}
+          publish_dir: ./build
